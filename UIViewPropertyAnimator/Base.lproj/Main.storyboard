@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIViewPropertyAnimator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-home" translatesAutoresizingMaskIntoConstraints="NO" id="9xy-Pb-XbM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet-molten" translatesAutoresizingMaskIntoConstraints="NO" id="Ha4-K4-zlU">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="4g5-L8-G72"/>
+                                    <constraint firstAttribute="height" constant="250" id="eHy-fK-0XC"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-Px-s4s">
+                                <rect key="frame" x="18" y="812" width="378" height="31"/>
+                                <color key="maximumTrackTintColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.95826795200000003" green="0.3379275933" blue="0.35587305339999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="valueDidChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="RhO-eY-8vD"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xZh-Px-s4s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3aV-Pv-6B3"/>
+                            <constraint firstItem="9xy-Pb-XbM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gz1-0a-Kkc"/>
+                            <constraint firstItem="xZh-Px-s4s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hoq-oJ-ZnC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xZh-Px-s4s" secondAttribute="trailing" constant="20" id="Lgv-JT-tP2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xZh-Px-s4s" secondAttribute="bottom" constant="20" id="Uv3-3W-uXB"/>
+                            <constraint firstItem="Ha4-K4-zlU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kf8-Qr-P1g"/>
+                            <constraint firstAttribute="bottom" secondItem="9xy-Pb-XbM" secondAttribute="bottom" id="pXA-C3-zrr"/>
+                            <constraint firstItem="Ha4-K4-zlU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="r6t-hG-XVq"/>
+                            <constraint firstItem="9xy-Pb-XbM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tMg-oY-Zlp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9xy-Pb-XbM" secondAttribute="trailing" id="wk7-Jm-0MJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="planetImageView" destination="Ha4-K4-zlU" id="u6N-wf-yqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="31.473214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-home" width="1080" height="2340"/>
+        <image name="planet-molten" width="250" height="250"/>
+    </resources>
 </document>
